@@ -5,12 +5,19 @@ import (
 	"fmt"
 )
 
+func TestLogin() {
+	fmt.Println("> login:")
+	l := mcloud.NewLogin("", "")
+	l.Connect()
+}
+
 func PrintEndpoints() {
 	fmt.Println("> endpoints:")
 	fmt.Println("domain: " + mcloud.Domain)
 	fmt.Println("cloud: " + mcloud.Cloud)
 	fmt.Println("auth: " + mcloud.Auth)
 	fmt.Println("pub: " + mcloud.Public)
+	fmt.Println("a-cgi: " + mcloud.AuthCGI)
 }
 
 func PrintMimes() {
@@ -26,5 +33,5 @@ func main() {
 	fmt.Println("testing client ...")
 	PrintEndpoints()
 	PrintMimes()
-	mcloud.Hello()
+	TestLogin()
 }
